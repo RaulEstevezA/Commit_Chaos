@@ -1,5 +1,7 @@
 # Commit Chaos
 
+<p align="center"><img src="public/commit-chaos-logo.png" alt="Commit Chaos logo" width="220"></p>
+
 An interactive Git adventure where commands—not quiz answers—solve 32 increasingly chaotic development incidents.
 
 - **[Play Commit Chaos](https://raulesteveza.github.io/games/Commit_Chaos/)**

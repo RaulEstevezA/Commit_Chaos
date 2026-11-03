@@ -1,5 +1,7 @@
 # Commit Chaos
 
+<p align="center"><img src="public/commit-chaos-logo.png" alt="Logo de Commit Chaos" width="220"></p>
+
 Juego educativo de Git con terminal de comandos, árbol visual y una campaña de 32 misiones. El jugador aprende en casa, entra en ChaosWare, se convierte en veterano y termina resolviendo incidentes de producción.
 
 ## Jugar
