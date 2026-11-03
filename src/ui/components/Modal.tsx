@@ -41,6 +41,7 @@ export function Modal({open,title,children,onClose}:{open:boolean;title:string;c
       const active=document.activeElement;
       const keyboardTrigger=active instanceof HTMLElement&&active!==document.body?active.getBoundingClientRect():null;
       const pointerTrigger=lastTriggerOrigin&&Date.now()-lastTriggerOrigin.capturedAt<1200?lastTriggerOrigin:null;
+      if(dialog)dialog.style.visibility='hidden';
       dialog?.showModal();
       if(dialog){
         const bounds=dialog.getBoundingClientRect();
@@ -48,7 +49,12 @@ export function Modal({open,title,children,onClose}:{open:boolean;title:string;c
         const y=pointerTrigger?pointerTrigger.y-bounds.top:keyboardTrigger?keyboardTrigger.top+keyboardTrigger.height/2-bounds.top:bounds.height/2;
         dialog.style.setProperty('--dialog-origin-x',`${x}px`);
         dialog.style.setProperty('--dialog-origin-y',`${y}px`);
-        setPhase(window.matchMedia('(prefers-reduced-motion: reduce)').matches?'idle':'opening');
+        const nextPhase=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'idle':'opening';
+        dialog.classList.remove('dialog--idle','dialog--closing');
+        dialog.classList.add(`dialog--${nextPhase}`);
+        void dialog.offsetWidth;
+        dialog.style.visibility='visible';
+        setPhase(nextPhase);
         window.clearTimeout(timer.current);
         timer.current=window.setTimeout(()=>setPhase('idle'),260);
       }
