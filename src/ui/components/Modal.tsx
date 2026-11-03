@@ -1,0 +1,2 @@
+import { useEffect,useRef,type ReactNode } from 'react';
+export function Modal({open,title,children,onClose}:{open:boolean;title:string;children:ReactNode;onClose:()=>void}){const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{if(open&&!ref.current?.open)ref.current?.showModal();if(!open&&ref.current?.open)ref.current?.close();},[open]);return <dialog ref={ref} onCancel={onClose} onClose={onClose} aria-labelledby="modal-title"><div className="modal__head"><h2 id="modal-title">{title}</h2><button onClick={onClose} aria-label="Close">×</button></div>{children}</dialog>}

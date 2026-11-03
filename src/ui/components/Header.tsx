@@ -1,0 +1,2 @@
+import type { Lang } from '../../core/missions/types';
+export function Header({lang,onLang}:{lang:Lang;onLang:(l:Lang)=>void}){return <header className="site-header"><a href="https://raulesteveza.github.io/">Raúl Estévez</a><div className="language" role="group" aria-label={lang==='es'?'Idioma':'Language'}>{(['en','es'] as Lang[]).map(x=><button key={x} type="button" aria-pressed={lang===x} onClick={()=>onLang(x)}>{x.toUpperCase()}</button>)}</div></header>}
