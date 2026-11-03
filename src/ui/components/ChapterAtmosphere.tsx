@@ -51,8 +51,6 @@ export function ChapterAtmosphere({ chapter, lang }: { chapter: 1 | 2 | 3 | 4; l
   const scene = ambience[chapter];
   return (
     <aside className={`atmosphere atmosphere--${chapter}`} aria-label={scene.location[lang]}>
-      <img className="atmosphere__art" src={`./part${chapter}.png`} alt="" />
-      <div className="atmosphere__shade" aria-hidden="true" />
       <div className="atmosphere__copy">
         <span>{scene.location[lang]}</span>
         <strong>{scene.mood[lang]}</strong>
