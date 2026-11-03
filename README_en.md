@@ -2,6 +2,12 @@
 
 An educational Git game with a command terminal, visual commit tree, and a 32-mission campaign. The player learns at home, joins ChaosWare, becomes a veteran, and eventually handles production incidents.
 
+## Play
+
+**[Play Commit Chaos](https://raulesteveza.github.io/games/Commit_Chaos/)**
+
+This is the source-code repository. Players should use the hosted version linked above; the repository is intended for development and maintenance rather than local game distribution.
+
 ## Features
 
 - Four eight-mission chapters in English and Spanish.
@@ -12,7 +18,9 @@ An educational Git game with a command terminal, visual commit tree, and a 32-mi
 - Four endings derived from Git actions.
 - Responsive layout, keyboard operation, and reduced-motion support.
 
-## Development
+## Development and contribution
+
+These instructions are for contributors who want to inspect or modify the source:
 
 ```bash
 npm install
@@ -28,6 +36,6 @@ npm run build
 
 Progress is stored only in the browser under the versioned `commit-chaos.progress` key. The game sends no data to a server.
 
-## Publishing
+## Web version
 
-The build uses relative paths and is ready for static hosting. This repository does not publish or deploy automatically; publication requires explicit approval.
+The build uses relative paths and is ready for static hosting. The player-facing version is available at **[raulesteveza.github.io/games/Commit_Chaos](https://raulesteveza.github.io/games/Commit_Chaos/)**.
