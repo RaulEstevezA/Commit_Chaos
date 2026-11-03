@@ -31,7 +31,7 @@ export function GitCommandsModal({open,lang,chapter,onClose}:{open:boolean;lang:
       <details className="chapter-toolbox">
         <summary>{lang==='es'?`Comandos útiles para el capítulo ${chapter}`:`Useful commands for chapter ${chapter}`}</summary>
         <div>{chapterToolbox[chapter].map(command=><code key={command}>{command}</code>)}</div>
-        <p>{lang==='es'?'Están desordenados a propósito. Descubrir cuándo usar cada uno sigue siendo cosa tuya.':'They are deliberately unordered. Working out when to use each one is still your job.'}</p>
+        <p>{lang==='es'?'Están desordenados a propósito. Descubrir cuándo usar cada uno o cuál es más óptimo sigue siendo cosa tuya.':'They are deliberately unordered. Working out when to use each one or which option is best is still your job.'}</p>
       </details>
       <p>{lang==='es'?'Referencia de los comandos disponibles en el simulador. Los argumentos entre < > son obligatorios; los que están entre [ ] son opcionales.':'Reference for commands available in the simulator. Arguments inside < > are required; arguments inside [ ] are optional.'}</p>
       <dl>{commands.map(([command,es,en])=><div key={command}><dt><code>{command}</code></dt><dd>{lang==='es'?es:en}</dd></div>)}</dl>
