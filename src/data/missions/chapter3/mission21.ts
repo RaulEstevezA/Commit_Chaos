@@ -1,0 +1,3 @@
+import { baseFiles, commits, m } from '../shared';
+
+export const mission21 = m(21,3,['Trabajo en rama equivocada','Work on the wrong branch'],['El arreglo c2 se hizo en hotfix, pero debe llegar a main.','Fix c2 was made on hotfix but must reach main.'],['Lleva c2 a main sin fusionar toda la rama.','Bring c2 to main without merging the whole branch.'],{commits,branches:{main:'c1',hotfix:'c2'},head:'main',working:baseFiles},[{type:'commitMessage',includes:'Add app'},{type:'onBranch',name:'main'}],[['Elige una cereza, no todo el árbol.','Pick one cherry, not the whole tree.']],[['git cherry-pick c2']]);

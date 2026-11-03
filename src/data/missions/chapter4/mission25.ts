@@ -1,0 +1,3 @@
+import { commits, m } from '../shared';
+
+export const mission25 = m(25,4,['Viernes, 17:59','Friday, 17:59'],['Producción cayó tras c2. Preserva la historia y restaura servicio.','Production fell after c2. Preserve history and restore service.'],['Revierte el fallo y publica main.','Revert the failure and push main.'],{commits,branches:{main:'c2'},head:'main',working:commits[1].files,remotes:{origin:{main:'c2'}}},[{type:'commitMessage',includes:'Revert'},{type:'remoteEquals',remote:'origin',branch:'main',ref:'main'}],[['reset --hard no es medicina para historia compartida.','reset --hard is not medicine for shared history.']],[['git revert c2','git push origin main']]);

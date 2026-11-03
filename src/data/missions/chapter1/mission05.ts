@@ -1,0 +1,3 @@
+import { baseFiles, commits, m } from '../shared';
+
+export const mission05 = m(5,1,['Trabajo interrumpido','Interrupted work'],['Una idea a medias bloquea el cambio de rama. Guárdala sin commit.','Half-finished work blocks a branch switch. Save it without committing.'],['Guarda los cambios en el stash y vuelve a main limpio.','Stash the changes and return to clean main.'],{commits,branches:{main:'c2',feature:'c1'},head:'feature',working:{...baseFiles,'src/app.ts':'WIP'}},[{type:'stashCount',count:1},{type:'onBranch',name:'main'},{type:'clean'}],[['El stash aparca cambios temporalmente.','The stash parks changes temporarily.']],[['git stash','git checkout main']]);

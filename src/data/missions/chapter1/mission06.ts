@@ -1,0 +1,3 @@
+import { baseFiles, m } from '../shared';
+
+export const mission06 = m(6,1,['Recupera la idea','Get the idea back'],['El cambio bueno está en el stash. No dejes que se jubile allí.','The good change is in the stash. Do not let it retire there.'],['Aplica el stash y confírmalo.','Apply the stash and commit it.'],{files:baseFiles,stash:[{message:'WIP',changes:{'src/app.ts':'console.log("idea")'}}]},[{type:'stashCount',count:0},{type:'clean'},{type:'commitMessage',includes:'idea'}],[['pop aplica y elimina la entrada.','pop applies and removes the entry.']],[['git stash pop','git add .','git commit -m "idea recuperada"']]);

@@ -1,0 +1,3 @@
+import { baseFiles, m } from '../shared';
+
+export const mission26 = m(26,4,['Hotfix bajo presión','Hotfix under pressure'],['Crea hotfix, confirma el arreglo e intégralo en main.','Create hotfix, commit the fix, and integrate it into main.'],['Termina en main con un merge.','Finish on main with a merge.'],{files:baseFiles,working:{...baseFiles,'fix.ts':'urgent'}},[{type:'onBranch',name:'main'},{type:'commitParents',count:2}],[['Aparca el cambio antes de crear la rama y recupéralo allí.','Park the change before creating the branch, then restore it there.']],[['git stash','git checkout -b hotfix','git stash pop','git add .','git commit -m "hotfix producción"','git checkout main','git merge hotfix']]);

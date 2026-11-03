@@ -1,0 +1,3 @@
+import { baseFiles, m } from '../shared';
+
+export const mission03 = m(3,1,['¿Qué he tocado?','What did I touch?'],['Anoche cambiaste app.ts. Hoy tu memoria ha hecho garbage collection.','You changed app.ts last night. Your memory has run garbage collection.'],['Inspecciona el estado y deja el cambio confirmado.','Inspect the state and commit the change.'],{files:baseFiles,working:{...baseFiles,'src/app.ts':'console.log("v2")'}},[{type:'effectUsed',effect:'inspect'},{type:'clean'}],[['git status separa lo preparado de lo pendiente.','git status separates staged and unstaged work.'],['Añade todo con un punto.','Stage everything with a dot.']],[['git status','git add .','git commit -m "actualiza app"']]);

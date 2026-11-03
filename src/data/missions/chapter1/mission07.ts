@@ -1,0 +1,3 @@
+import { baseFiles, commits, m } from '../shared';
+
+export const mission07 = m(7,1,['Dos caminos, un proyecto','Two paths, one project'],['La rama feature contiene la pantalla terminada. Integra sin perder historia.','The feature branch contains the finished screen. Integrate it without losing history.'],['Fusiona feature en main.','Merge feature into main.'],{commits:[...commits,{id:'c3',message:'Feature',parents:['c1'],files:{...baseFiles,'src/app.ts':'console.log("ready")','feature.ts':'done'}}],branches:{main:'c2',feature:'c3'},head:'main',working:{...baseFiles,'src/app.ts':'console.log("ready")'}},[{type:'commitParents',count:2},{type:'onBranch',name:'main'}],[['Estás en la rama que recibe.','Stand on the receiving branch.']],[['git merge feature']]);

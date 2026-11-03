@@ -1,0 +1,3 @@
+import { commits, m } from '../shared';
+
+export const mission23 = m(23,3,['Sincronización prudente','Careful sync'],['Tu feature reescrita y el remoto divergen. Publica sin usar --force a secas.','Your rewritten feature and remote diverged. Publish without plain --force.'],['Actualiza el remoto con protección.','Update the remote with protection.'],{commits,branches:{main:'c1',feature:'c2'},head:'feature',working:commits[1].files,remotes:{origin:{feature:'c1'}}},[{type:'effectUsed',effect:'safe-force'}],[['La lease es el cinturón de seguridad.','The lease is your seat belt.']],[['git push --force-with-lease origin feature']]);

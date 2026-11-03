@@ -1,0 +1,3 @@
+import { m } from '../shared';
+
+export const mission02 = m(2,1,['La primera cápsula del tiempo','The first time capsule'],['Hay un README sin seguimiento. Guárdalo con un mensaje claro.','An untracked README needs a clear commit.'],['Crea un commit cuyo mensaje incluya “inicio”.','Create a commit with “start” in its message.'],{working:{'README.md':'# Mi juego'}},[{type:'commitMessage',includes:'inicio'}],[['Primero prepara el archivo; después confirma.','Stage the file, then commit it.'],['Los mensajes viajan después de -m.','Messages follow -m.']],[['git add README.md','git commit -m "inicio del proyecto"']]);

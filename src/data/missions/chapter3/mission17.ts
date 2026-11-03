@@ -1,0 +1,3 @@
+import { commits, m } from '../shared';
+
+export const mission17 = m(17,3,['¿Quién rompió esto?','Who broke this?'],['Hay commits sospechosos. Investiga antes de tocar.','There are suspicious commits. Investigate before touching anything.'],['Consulta estado e historial.','Inspect status and history.'],{commits,branches:{main:'c2'},head:'main',working:commits[1].files},[{type:'effectUsed',effect:'inspect'}],[['status y log son linternas, no martillos.','status and log are flashlights, not hammers.']],[['git status','git log --oneline']],['Marcos: Yo no fui. Laura: Nadie había preguntado todavía.','Marcos: It was not me. Laura: Nobody had asked yet.']);

@@ -1,0 +1,3 @@
+import { baseFiles, m } from '../shared';
+
+export const mission09 = m(9,2,['Bienvenido, Terminator','Welcome, Terminator'],['Laura te pide una rama para tu primera tarea. Marcos ya trabaja “directamente donde toca”.','Laura asks for a branch for your first task. Marcos already works “right where it belongs”.'],['Crea y usa feature/login.','Create and use feature/login.'],{files:baseFiles},[{type:'onBranch',name:'feature/login'}],[['No trabajes directamente en main.','Do not work directly on main.']],[['git switch -c feature/login'],['git checkout -b feature/login']],['Laura: Aquí una rama evita una reunión.','Laura: A branch here prevents a meeting.']);

@@ -1,0 +1,3 @@
+import { baseFiles, commits, m } from '../shared';
+
+export const mission10 = m(10,2,['Conecta con el mundo','Connect to the world'],['El remoto origin existe y tiene main más avanzado.','The origin remote exists and has a newer main.'],['Descarga referencias e inspecciona el historial.','Fetch references and inspect history.'],{commits,branches:{main:'c1'},head:'main',working:baseFiles,remotes:{origin:{main:'c2'}}},[{type:'effectUsed',effect:'fetch'},{type:'effectUsed',effect:'inspect'}],[['fetch no cambia tu rama de trabajo.','fetch does not change your working branch.']],[['git fetch origin','git log --oneline']]);

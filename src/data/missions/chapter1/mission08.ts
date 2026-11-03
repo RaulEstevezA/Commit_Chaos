@@ -1,0 +1,3 @@
+import { commits, m } from '../shared';
+
+export const mission08 = m(8,1,['La etiqueta de la victoria','Victory tag'],['Tu primer proyecto funciona. Nadie sabe cómo, así que marca el momento.','Your first project works. Nobody knows how, so mark the moment.'],['Crea la etiqueta v1.0 y consulta el historial.','Create tag v1.0 and inspect history.'],{commits,branches:{main:'c2'},head:'main',working:commits[1].files},[{type:'effectUsed',effect:'tag'},{type:'effectUsed',effect:'inspect'}],[['git tag nombra una versión.','git tag names a version.']],[['git log --oneline','git tag v1.0']],['Has aprendido suficiente Git para que ChaosWare cometa el error de contratarte.','You learned enough Git for ChaosWare to make the mistake of hiring you.']);
