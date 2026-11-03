@@ -34,8 +34,8 @@ export const m = (
   briefing: l(...brief),
   objective: l(...objective),
   dialogue: l(...(dialogue ?? [
-    'Terminator, Git no es una copia de seguridad con sentimientos.',
-    'Terminator, Git is not a backup with feelings.',
+    '{player}, Git no es una copia de seguridad con sentimientos.',
+    '{player}, Git is not a backup with feelings.',
   ])),
   seed,
   goals,
