@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import type { Lang } from '../../core/missions/types';
+import { sortedGlossary } from '../../data/lore/glossary';
 import { chapterToolbox } from '../../data/missions/chapterToolbox';
 import { Modal } from './Modal';
 
@@ -24,11 +26,21 @@ const commands = [
   ['git cherry-pick <ref>','Aplicar un commit concreto','Apply one specific commit'],
   ['git rebase <ref>','Recolocar la historia','Rebase the history'],
   ['git tag [nombre]','Crear una etiqueta','Create a tag'],
+  ['git help [término]','Explicar un comando o concepto','Explain a command or concept'],
 ] as const;
 
 export function GitCommandsModal({open,lang,chapter,onClose}:{open:boolean;lang:Lang;chapter:1|2|3|4;onClose:()=>void}) {
+  const [tab,setTab]=useState<'commands'|'glossary'>('commands');
   return <Modal open={open} title={lang==='es'?'Comandos GIT':'GIT commands'} onClose={onClose}>
     <div className="command-reference">
+      <div className="command-tabs" role="tablist">
+        <button type="button" role="tab" aria-selected={tab==='commands'} onClick={()=>setTab('commands')}>{lang==='es'?'Comandos':'Commands'}</button>
+        <button type="button" role="tab" aria-selected={tab==='glossary'} onClick={()=>setTab('glossary')}>{lang==='es'?'Glosario':'Glossary'}</button>
+      </div>
+      {tab==='glossary'?<>
+      <p>{lang==='es'?'Consultarlo es gratis: no suma caos ni cuenta como ayuda. También puedes escribir git help <término> en la terminal o pulsar las palabras subrayadas de cada misión.':'Reading it is free: it adds no chaos and does not count as help. You can also type git help <term> in the terminal or press the underlined words in each mission.'}</p>
+      <dl className="glossary-list">{sortedGlossary(lang).map(entry=><div key={entry.id}><dt><b>{entry.term[lang]}</b></dt><dd>{entry.definition[lang]}<span className="glossary-quip">{entry.quip[lang]}</span></dd></div>)}</dl>
+      </>:<>
       <details className="chapter-toolbox">
         <summary>{lang==='es'?`Comandos útiles para el capítulo ${chapter}`:`Useful commands for chapter ${chapter}`}</summary>
         <div>{chapterToolbox[chapter].map(command=><code key={command}>{command}</code>)}</div>
@@ -36,6 +48,7 @@ export function GitCommandsModal({open,lang,chapter,onClose}:{open:boolean;lang:
       </details>
       <p>{lang==='es'?'Referencia de los comandos disponibles en el simulador. Los argumentos entre < > son obligatorios; los que están entre [ ] son opcionales.':'Reference for commands available in the simulator. Arguments inside < > are required; arguments inside [ ] are optional.'}</p>
       <dl>{commands.map(([command,es,en])=><div key={command}><dt><code>{command}</code></dt><dd>{lang==='es'?es:en}</dd></div>)}</dl>
+      </>}
     </div>
   </Modal>;
 }
