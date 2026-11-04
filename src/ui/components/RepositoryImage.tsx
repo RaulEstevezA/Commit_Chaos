@@ -2,9 +2,13 @@ import { useEffect,useState } from 'react';
 
 const artifactFiles:Record<string,string>={
   'cc-7f3a':'./assets/data/cc-7f3a.bin',
+  'e1-a91c':'./assets/data/e1-a91c.bin',
+  'e2-b42d':'./assets/data/e2-b42d.bin',
+  'e3-c73f':'./assets/data/e3-c73f.bin',
+  'e4-d18a':'./assets/data/e4-d18a.bin',
 };
 
-export function RepositoryImage({artifact}:{artifact:string}){
+export function RepositoryImage({artifact,className='terminal__image',alt='Recovered image from repository'}:{artifact:string;className?:string;alt?:string}){
   const[url,setUrl]=useState<string|null>(null);
   const[failed,setFailed]=useState(false);
 
@@ -23,5 +27,5 @@ export function RepositoryImage({artifact}:{artifact:string}){
 
   if(failed)return <span className="terminal__artifact-error">fatal: recovered artifact could not be decoded</span>;
   if(!url)return <span className="terminal__artifact-loading">Decoding binary artifact…</span>;
-  return <img className="terminal__image" src={url} alt="Recovered image from repository"/>;
+  return <img className={className} src={url} alt={alt}/>;
 }
