@@ -8,6 +8,7 @@ const commands = [
   ['git add <archivo>','Preparar cambios','Stage changes'],
   ['git commit -m "mensaje"','Crear un commit','Create a commit'],
   ['git log','Ver el historial','Read the history'],
+  ['git show [ref:ruta]','Examinar un commit o archivo','Inspect a commit or file'],
   ['git branch [nombre]','Listar o crear ramas','List or create branches'],
   ['git switch [-c] <rama>','Cambiar o crear una rama','Switch or create a branch'],
   ['git checkout [-b] <rama>','Alternativa a switch','Alternative to switch'],
