@@ -4,7 +4,7 @@ type Voice = 1 | 2 | 3 | 4;
 const line = (es: string, en: string): Localized => ({ es, en });
 
 /** What the cast says the first time a mission sees a Git effect. Chapter 1 only has the duck. */
-const effectLines: Record<string, Record<Voice, Localized>> = {
+export const effectLines: Record<string, Record<Voice, Localized>> = {
   'force-push': {
     1: line('Pato: Force push en un repositorio donde solo estás tú. Te has aplastado a ti mismo. Impresionante.', 'Duck: A force push in a repository with only you in it. You crushed yourself. Impressive.'),
     2: line('Laura: {player}, te acabo de enviar una invitación. Se titula “Hablemos”. Dura hasta el jueves.', 'Laura: {player}, I just sent you an invite. It is called “Let’s talk”. It runs until Thursday.'),
@@ -31,7 +31,7 @@ const effectLines: Record<string, Record<Voice, Localized>> = {
   },
 };
 
-const errorLines: Record<Voice, Localized> = {
+export const errorLines: Record<Voice, Localized> = {
   1: line('Pato: Tercer error. No juzgo. Solo parpadeo muy despacio. Hay un botón de ayuda, por cierto.', 'Duck: Third error. I am not judging. I am just blinking very slowly. There is a help button, by the way.'),
   2: line('Laura: Tres errores. Ya has igualado la media de Marcos antes del café. Prueba con el botón de ayuda.', 'Laura: Three errors. That matches Marcos’s pre-coffee average. Try the help button.'),
   3: line('Marcos: Tranquilidad, a mí también me pasa. Aunque a mí me pasa en producción.', 'Marcos: Relax, it happens to me too. Although it happens to me in production.'),

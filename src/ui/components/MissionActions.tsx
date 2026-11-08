@@ -4,7 +4,7 @@ export function MissionActions({lang,onHelp,onCommands,onMessage,onRetry}:{lang:
   return <div className="briefing__actions">
     <button className="pixel-button" onClick={onHelp}>{lang==='es'?'Pedir ayuda':'Get help'}</button>
     <button className="pixel-button" onClick={onCommands}>{lang==='es'?'Comandos GIT':'GIT commands'}</button>
-    <button className="pixel-button" onClick={onMessage}>{lang==='es'?'Ver mensaje':'View message'}</button>
+    <button className="pixel-button" onClick={onMessage}>{lang==='es'?'Historia':'Story'}</button>
     <button className="pixel-button" onClick={onRetry}>{lang==='es'?'Reiniciar misión':'Restart mission'}</button>
   </div>;
 }
