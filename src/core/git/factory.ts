@@ -7,7 +7,7 @@ export function createRepo(seed:RepoSeed={}):GitState {
   const base=seed.files??(last?s.commits[last].files:{}); if(!last && Object.keys(base).length){last=`c${s.nextId++}`;s.commits[last]={id:last,message:'Initial commit',parents:[],files:{...base}};}
   s.branches=Object.fromEntries(Object.entries(seed.branches??{main:last}).map(([name,commitId])=>[name,{name,commitId}]));
   s.head=seed.detached?{type:'detached',commitId:seed.detached}:{type:'branch',name:seed.head??'main'};
-  s.workingTree={...(seed.working??base)}; s.index={...(seed.index??{})}; s.conflicts=[...(seed.conflicts??[])];
+  s.workingTree={...(seed.working??base)}; s.index={...seed.index}; s.conflicts=[...(seed.conflicts??[])];
   s.remotes=Object.fromEntries(Object.entries(seed.remotes??{}).map(([name,branches])=>[name,{name,branches:{...branches}}]));
   s.stash=(seed.stash??[]).map((x,i)=>({id:`stash@{${i}}`,...x})); s.nextId=Math.max(s.nextId,Object.keys(s.commits).length+1); return s;
 }
